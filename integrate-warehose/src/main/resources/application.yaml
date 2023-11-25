@@ -45,6 +45,7 @@ dubbo:
     password: 123456
     enable-empty-protection: true
     group: DEV_GROUP
+    check: false
   protocol:
     port: -1
     name: dubbo
