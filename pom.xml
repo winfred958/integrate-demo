@@ -32,9 +32,10 @@
         <!-- shenyu -->
         <shenyu.version>2.5.1</shenyu.version>
 
+        <!-- other -->
         <lombok.version>1.18.26</lombok.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-
+        <hutool.version>5.8.18</hutool.version>
         <!-- plugin -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
@@ -154,6 +155,23 @@
                 </exclusions>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-context</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-commons</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+            <!-- sentinel -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
             <!-- duboo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
@@ -166,12 +184,15 @@
                 <version>${dubbo.version}</version>
             </dependency>
 
-
-            <!-- sentinel -->
             <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
