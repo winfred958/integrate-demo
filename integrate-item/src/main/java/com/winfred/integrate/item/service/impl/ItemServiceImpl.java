@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class ItemServiceImpl implements ItemService {
 
 
-  @DubboReference(version = "1.0.0")
+  @DubboReference(version = "1.0.0", check = false)
   private ItemInventoryApi itemInventoryApi;
 
   @Override

@@ -10,8 +10,8 @@ import reactor.core.publisher.Mono;
 /**
  * @author winfred958
  */
-@RequestMapping(value = "/item/")
-@ShenyuSpringCloudClient(value = "/item/")
+@RequestMapping(value = "/info/")
+@ShenyuSpringCloudClient(value = "/info/")
 public interface ItemApi {
 
   @GetMapping(value = "/{skuId}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -31,11 +31,6 @@
 
         <!-- shenyu -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-commons</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.shenyu</groupId>
             <artifactId>shenyu-spring-boot-starter-gateway</artifactId>
             <version>${shenyu.version}</version>
@@ -64,6 +59,7 @@
             <artifactId>shenyu-spring-boot-starter-plugin-httpclient</artifactId>
         </dependency>
 
+        <!-- sentinel -->
         <dependency>
             <groupId>org.apache.shenyu</groupId>
             <artifactId>shenyu-spring-boot-starter-plugin-sentinel</artifactId>
@@ -91,11 +87,6 @@
             <artifactId>nacos-client</artifactId>
         </dependency>
 
-        <!-- sentinel -->
-        <dependency>
-            <groupId>org.apache.shenyu</groupId>
-            <artifactId>shenyu-spring-boot-starter-plugin-sentinel</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
