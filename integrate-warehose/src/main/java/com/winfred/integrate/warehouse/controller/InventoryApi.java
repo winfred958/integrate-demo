@@ -1,4 +1,4 @@
-package com.winfred.integrate.item.controller;
+package com.winfred.integrate.warehouse.controller;
 
 import com.winfred.integrate.api.entity.base.BaseResponse;
 import org.apache.shenyu.client.springcloud.annotation.ShenyuSpringCloudClient;
@@ -11,10 +11,10 @@ import reactor.core.publisher.Mono;
 /**
  * @author winfred958
  */
-@RequestMapping(value = "/info/")
-@ShenyuSpringCloudClient(value = "/info/**")
-public interface ItemApi {
+@RequestMapping(value = "/inv")
+@ShenyuSpringCloudClient(value = "/inv/**")
+public interface InventoryApi {
 
-  @GetMapping(value = "/{skuId}", produces = MediaType.APPLICATION_JSON_VALUE)
-  Mono<BaseResponse<?>> getItemInfo(@PathVariable String skuId);
+  @GetMapping(value = "/sku/{skuId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  Mono<BaseResponse<?>> getInventory(@PathVariable String skuId);
 }

@@ -57,7 +57,7 @@ dubbo:
 shenyu:
   register:
     register-type: nacos
-    server-lists: nacos://nacos.local.dev.xyz:8848
+    server-lists: nacos.local.dev.xyz:8848
     props:
       nacosNameSpace: ed10926a-05e2-4990-95e5-d213e3ac9f73
   client:
@@ -65,6 +65,7 @@ shenyu:
       props:
         contextPath: /${application.name}
         addPrefixed: false
+        isFull: true
 
 logging.file.name: ${system.logging.file}
 logging.pattern.file: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"

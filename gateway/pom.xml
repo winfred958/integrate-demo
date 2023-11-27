@@ -22,7 +22,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
-            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,10 +43,6 @@
             <artifactId>dubbo</artifactId>
             <version>${dubbo.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.shenyu</groupId>
-            <artifactId>shenyu-spring-boot-starter-plugin-springcloud</artifactId>
-        </dependency>
 
         <!-- http -->
         <dependency>
@@ -57,6 +52,11 @@
         <dependency>
             <groupId>org.apache.shenyu</groupId>
             <artifactId>shenyu-spring-boot-starter-plugin-httpclient</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shenyu</groupId>
+            <artifactId>shenyu-spring-boot-starter-plugin-springcloud</artifactId>
         </dependency>
 
         <!-- sentinel -->

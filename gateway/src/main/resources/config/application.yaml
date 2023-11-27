@@ -31,8 +31,6 @@ spring:
 #      default-hostname: localhost
 #      default-ip-address: 0.0.0.0
 
-
-
 shenyu:
   sync:
     websocket:

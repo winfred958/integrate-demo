@@ -30,7 +30,7 @@
         <dubbo.version>3.1.10</dubbo.version>
         <nacos-client.version>2.2.3</nacos-client.version>
         <!-- shenyu -->
-        <shenyu.version>2.5.1</shenyu.version>
+        <shenyu.version>2.6.0</shenyu.version>
 
         <!-- other -->
         <lombok.version>1.18.26</lombok.version>

@@ -16,9 +16,7 @@
     <maven.compiler.target>8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
   <dependencies>
-
     <dependency>
       <groupId>com.winfred.integrate</groupId>
       <artifactId>integrate-api</artifactId>
@@ -47,11 +45,11 @@
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.alibaba.nacos</groupId>
       <artifactId>nacos-client</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-context</artifactId>
@@ -85,8 +83,12 @@
       <groupId>org.apache.shenyu</groupId>
       <artifactId>shenyu-spring-boot-starter-client-springcloud</artifactId>
     </dependency>
-  </dependencies>
 
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
