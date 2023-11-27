@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+application:
+  name: gateway
+spring:
+  application:
+    name: ${application.name}
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    util:
+      enabled: true
+    discovery:
+      enabled: true
+    nacos:
+      config:
+        server-addr: "nacos.local.dev.xyz:8848"
+        namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+        file-extension: yaml
+        group: DEV_GROUP
+        refresh-enabled: true
+        enabled: true
+      discovery:
+        server-addr: "nacos.local.dev.xyz:8848"
+        namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+        group: DEV_GROUP
+    compatibility-verifier:
+      enabled: false
+#    inetutils:
+#      default-hostname: localhost
+#      default-ip-address: 0.0.0.0
+
+shenyu:
+  sync:
+    websocket:
+      urls: ws://shenyu-admin.local.dev.xyz:9095/websocket  # shenyu-admin 地址
+      allowOrigin: ws://shenyu-admin.local.dev.xyz:9195
+
+logging:
+  level:
+    root: info
+    org.apache.shenyu: debug

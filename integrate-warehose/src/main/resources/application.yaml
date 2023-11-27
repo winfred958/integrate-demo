@@ -1,0 +1,72 @@
+application:
+  name: warehouse
+system:
+  logging:
+    file: /data/log/${spring.application.name}/${spring.application.name}.log
+    format: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
+server:
+  port: 18082
+spring:
+  application:
+    name: ${application.name}
+  jackson:
+    default-property-inclusion: non_empty
+  webflux:
+    base-path: ${application.name}
+  cloud:
+    discovery:
+      enabled: true
+    nacos:
+      discovery:
+        server-addr: "nacos.local.dev.xyz:8848"
+        namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+        group: DEV_GROUP
+        enabled: true
+      config:
+        server-addr: "nacos.local.dev.xyz:8848"
+        namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+        file-extension: yaml
+        group: DEV_GROUP
+        import-check:
+          enabled: false
+        enabled: true
+    sentinel:
+      enabled: true
+      log:
+        dir: /data/logs/${application.name}/sentinel
+
+dubbo:
+  application:
+    name: ${application.name}
+    qos-enable: false
+  registry:
+    address: nacos://nacos.local.dev.xyz:8848?namespace=ed10926a-05e2-4990-95e5-d213e3ac9f73
+    username: nacos
+    password: 123456
+    enable-empty-protection: true
+    group: DEV_GROUP
+    check: false
+  protocol:
+    port: -1
+    name: dubbo
+  config-center:
+    address: nacos://nacos.local.dev.xyz:8848
+    namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+    group: DEV_GROUP
+
+shenyu:
+  register:
+    register-type: nacos
+    server-lists: nacos.local.dev.xyz:8848
+    props:
+      nacosNameSpace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+  client:
+    springCloud:
+      props:
+        contextPath: /${application.name}
+        addPrefixed: false
+        isFull: true
+
+logging.file.name: ${system.logging.file}
+logging.pattern.file: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
+logging.pattern.console: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
