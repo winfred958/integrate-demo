@@ -19,8 +19,8 @@ spring:
         namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73
         file-extension: yaml
         group: DEV_GROUP
-        import-check:
-          enabled: false
+        refresh-enabled: true
+        enabled: true
       discovery:
         server-addr: "nacos.local.dev.xyz:8848"
         namespace: ed10926a-05e2-4990-95e5-d213e3ac9f73

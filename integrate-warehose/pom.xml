@@ -79,6 +79,11 @@
       <artifactId>dubbo-registry-nacos</artifactId>
     </dependency>
 
+    <!-- shenyu -->
+    <dependency>
+      <groupId>org.apache.shenyu</groupId>
+      <artifactId>shenyu-spring-boot-starter-client-springcloud</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>cn.hutool</groupId>
