@@ -5,7 +5,6 @@ import com.winfred.integrate.api.entity.base.BaseResponse;
 import com.winfred.integrate.warehouse.controller.InventoryApi;
 import com.winfred.integrate.warehouse.service.ItemInventoryService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
