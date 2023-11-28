@@ -3,6 +3,11 @@ server:
 
 application:
   name: gateway
+system:
+  logging:
+    file: /data/log/${spring.application.name}/${spring.application.name}.log
+    format: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
+
 spring:
   application:
     name: ${application.name}
@@ -32,12 +37,28 @@ spring:
 #      default-ip-address: 0.0.0.0
 
 shenyu:
+#  spring-cloud-cache:
+#    enabled: true
   sync:
     websocket:
-      urls: ws://shenyu-admin.local.dev.xyz:9095/websocket  # shenyu-admin 地址
-      allowOrigin: ws://shenyu-admin.local.dev.xyz:9195
+#      urls: ws://shenyu-admin.local.dev.xyz:9095/websocket  # shenyu-admin 地址
+#      allowOrigin: ws://shenyu-admin.local.dev.xyz:9195
+      urls: ws://127.0.0.1:9095/websocket  # shenyu-admin 地址
+      allowOrigin: ws://127.0.0.1:9195
+  netty:
+    http:
+      webServerFactoryEnabled: true
+      selectCount: 16
+      workerCount: 256
+
+logging.file.name: ${system.logging.file}
+logging.pattern.file: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
+logging.pattern.console: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
 
 logging:
   level:
     root: info
     org.apache.shenyu: debug
+
+
+

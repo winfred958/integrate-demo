@@ -15,6 +15,7 @@ public class ItemInventoryServiceImpl implements ItemInventoryService {
 
   @Override
   public ItemInventoryEntity getItemInventory(String skuId) {
+    log.info(" item inventory sku: {}", skuId);
     return ItemInventoryEntity
         .builder()
         .skuId(skuId)
