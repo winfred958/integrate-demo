@@ -21,6 +21,7 @@ public class ItemServiceImpl implements ItemService {
 
   @Override
   public ItemInfoEntity getItem(String skuId) {
+    log.info(" item sku: {}", skuId);
     final ItemInventoryEntity itemInventory = itemInventoryApi.getItemInventory(skuId);
     return ItemInfoEntity
         .builder()

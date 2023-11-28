@@ -60,12 +60,14 @@ shenyu:
     server-lists: nacos.local.dev.xyz:8848
     props:
       nacosNameSpace: ed10926a-05e2-4990-95e5-d213e3ac9f73
+      group: DEV_GROUP  # 坑呀
   client:
     springCloud:
       props:
+        appName: ${application.name}
         contextPath: /${application.name}
-        addPrefixed: false
         isFull: true
+        addPrefixed: false
 
 logging.file.name: ${system.logging.file}
 logging.pattern.file: "%date{yyyy-MM-dd HH:mm:ss,SSS} %level [%thread] [%X{trace_id}] [%logger{10}#%method:%line] - %msg%n%throwable"
